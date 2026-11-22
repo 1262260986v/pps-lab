@@ -1,0 +1,31 @@
+// Q8c) A Bioengineering laboratory technician has recorded the
+temperature readings of two laboratory incubators in the wrong order.
+Write a C program using a user defined function and pointers ( call by reference)
+to swap the two temperature readings and display the corrected values
+
+
+
+#include<stdio.h>
+void swap(float*a,float*b)
+{
+float temp;
+temp =*a;
+*a = *b;
+*b = temp;
+}
+int main()
+{
+float temp1,temp2;
+printf("Enter temperature of Incubator 1:");
+scanf("%f",&temp1);
+printf("Enter teperature of incubator 2:");
+scanf("%f",&temp2);
+printf("\nBefore swapping: \n");
+printf("Incubator 1 temperature=%.2fc\n",temp1);
+printf("Incubator 2 temperature=%.2fc\n",temp2);
+swap(&temp1,&temp2);
+printf("\nAfter swapping: \n");
+printf("Incubator 1 temperature=%.2fc\n",temp1);
+printf("Incubator 2 temperature=%.2fc\n",temp2);
+return 0;
+}
